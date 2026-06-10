@@ -1,0 +1,78 @@
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: esports-bigdata-backend
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/${MYSQL_DB:esports}?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true&useServerPrepStmts=true
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD}
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      pool-name: EsportsHikariCP
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 50MB
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: AUTO
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath*:mapper/**/*.xml
+
+# JWT 配置
+jwt:
+  secret: ${JWT_SECRET:esports-bigdata-jwt-secret-please-replace-in-production-2026}
+  expire-hours: ${JWT_EXPIRE_HOURS:72}
+  header: X-Token
+  prefix: "Bearer "
+
+# Riot API
+riot:
+  api-key: ${RIOT_API_KEY:}
+  region: asia
+  platform: kr
+
+# Knife4j
+knife4j:
+  enable: true
+  openapi:
+    title: Riot 电竞大数据分析平台 API
+    version: 1.0.0
+    description: 包含大屏、玩家、英雄、比赛四大模块的 RESTful 接口
+    concat: zjb@esports.com
+    group:
+      default:
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - com.esports.bigdata.module
+
+logging:
+  level:
+    root: INFO
+    com.esports.bigdata: DEBUG
+    org.springframework.jdbc.core.JdbcTemplate: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

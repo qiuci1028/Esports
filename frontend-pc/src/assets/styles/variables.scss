@@ -1,0 +1,85 @@
+// ====================================================================
+// 全局 SCSS 变量：来自 web网页设计.md 配色规范
+// ====================================================================
+
+// 主题色
+$color-primary: #1677FF;       // 主色 科技蓝
+$color-primary-light: #4096FF;
+$color-primary-dark: #0958D9;
+
+// 背景
+$color-bg-page: #0F172A;       // 全站底层
+$color-bg-card: #1E293B;       // 卡片背景
+$color-bg-card-hover: #273449;
+$color-bg-mask: rgba(15, 23, 42, 0.7);
+
+// 边框
+$color-border: #334155;
+$color-border-light: #475569;
+
+// 文字
+$color-text-primary: #F8FAFC;   // 一级
+$color-text-secondary: #94A3B8; // 辅助
+$color-text-disabled: #64748B;
+$color-text-link: $color-primary-light;
+
+// 语义色
+$color-success: #10B981;        // 胜/成功
+$color-danger: #EF4444;         // 败/失败
+$color-warning: #F59E0B;        // 热度/警示
+$color-info: #3B82F6;
+
+// 字体
+$font-family-base: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+$font-family-num: "DIN Alternate", "Bahnschrift", "Consolas", monospace;
+
+// 字号
+$font-size-page-title: 28px;
+$font-size-card-title: 20px;
+$font-size-data-large: 28px;
+$font-size-data-medium: 24px;
+$font-size-data-small: 20px;
+$font-size-body: 14px;
+$font-size-caption: 12px;
+
+// 行高
+$line-height-title: 1.2;
+$line-height-body: 1.5;
+
+// 间距
+$space-page-x: 24px;
+$space-page-y: 16px;
+$space-card: 20px;
+$space-card-padding-y: 16px;
+$space-card-padding-x: 20px;
+
+// 圆角
+$radius-card: 8px;
+$radius-button: 8px;
+$radius-tag: 4px;
+
+// 阴影
+$shadow-card: 0 2px 12px rgba(0, 0, 0, 0.3);
+$shadow-popup: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+// 导航栏
+$height-nav: 60px;
+$height-footer: 80px;
+
+// 断点（PC 端为主，最低兼容 1280）
+$breakpoint-lg: 1600px;
+$breakpoint-md: 1280px;
+
+// Element Plus 暗色主题覆盖
+$--el-bg-color: #{$color-bg-card};
+$--el-bg-color-overlay: #1E293B;
+$--el-text-color-primary: #{$color-text-primary};
+$--el-text-color-regular: #cbd5e1;
+$--el-text-color-secondary: #{$color-text-secondary};
+$--el-border-color: #{$color-border};
+$--el-border-color-light: #{$color-border-light};
+$--el-color-primary: #{$color-primary};
+$--el-color-success: #{$color-success};
+$--el-color-danger: #{$color-danger};
+$--el-color-warning: #{$color-warning};
+$--el-color-info: #{$color-info};

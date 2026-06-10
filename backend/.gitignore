@@ -1,0 +1,24 @@
+target/
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+.factorypath
+build/
+out/
+HELP.md
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# 敏感配置
+.env
+*.env
+!.env.example
+
+# 日志
+logs/
+*.log

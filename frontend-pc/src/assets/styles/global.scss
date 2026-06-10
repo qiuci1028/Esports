@@ -1,0 +1,76 @@
+// ====================================================================
+// 全局基础样式
+// ====================================================================
+
+* { box-sizing: border-box; }
+
+body {
+  background: $color-bg-page;
+  color: $color-text-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: $color-text-link;
+  text-decoration: none;
+  &:hover { opacity: 0.85; }
+}
+
+button { font-family: inherit; }
+
+// 数字字体（数据值）
+.num {
+  font-family: $font-family-num;
+  font-variant-numeric: tabular-nums;
+}
+
+// 通用文字色
+.text-primary { color: $color-text-primary; }
+.text-secondary { color: $color-text-secondary; }
+.text-success { color: $color-success; }
+.text-danger  { color: $color-danger; }
+.text-warning { color: $color-warning; }
+.text-brand   { color: $color-primary; }
+
+// 通用卡片
+.biz-card {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-card;
+  box-shadow: $shadow-card;
+  padding: $space-card-padding-y $space-card-padding-x;
+}
+
+// 通用页头
+.biz-page-header {
+  font-size: $font-size-page-title;
+  font-weight: 700;
+  line-height: $line-height-title;
+  margin: 0 0 $space-card 0;
+  color: $color-text-primary;
+}
+
+// 滚动条美化
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: $color-border;
+  border-radius: 4px;
+  &:hover { background: $color-border-light; }
+}
+
+// 响应式
+@media (max-width: $breakpoint-md) {
+  .hide-narrow { display: none !important; }
+}
